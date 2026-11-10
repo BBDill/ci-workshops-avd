@@ -3,6 +3,12 @@ aaa_authorization:
     default: local
 aaa_root:
   disabled: true
+banners:
+  motd: 'You shall not pass. Unless you are authorized. Then you shall pass.
+
+    EOF
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -91,6 +97,15 @@ local_users:
   sha512_password: $6$4c4fb10f79ed9b22$rwA0ssFM5k7mtSf.pGIHdpv76gxZTLw69sqR3YxHfSKkGzfYECt9.iQtyxlDhazCe2h7oUN7Xhy1rr3t..TFR1
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjjifTH2KQ/MiguBxXDPNHU6ru8xIKlfOSZgt0sCIlNkg9TM1rZJsvaY7aduGmbBuuMLNRcsgs6ATYii3KuH0XSfdl0He75PtvZt+njf5YMQCqc0cAfNIN7ywCf1RudHD5n4HLxsiSKo9yQCsyxLv92D0EcAZj05akgKEQfzzJKwCH5OSrFSZ/BJh+HgtdJ3cmeziv4mpYHSHugOGcSiyfOGqA5oYia7AXGGaRk2YqPNlmR75cNvF/maqeim4ImdflIQaUJVycknwQLkCXsNSMtF2pg3hHZUHF9Jef2syYxipJpBK0ZEtulB5kzvi7FkLVKLPCAecoSOJEuKB5mqr1
     arista@portland-automationws-14-07497648-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 loopback_interfaces:
 - name: Loopback0
   description: ROUTER_ID
